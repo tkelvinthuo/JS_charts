@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chart with User Input</title>
+    <style>
+        canvas {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+        }
+
+        /* Style the form area */
+        .form-area {
+            margin-bottom: 20px;
+        }
+
+        .form-area input, .form-area select {
+            margin: 5px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        .form-area button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-area button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Chart</h1>
+
+    
+
+    <!-- Chart Area -->
+    <canvas id="myChart" height="100px"></canvas>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Input Form -->
+    <div class="form-area">
+        <label for="labels">Enter Labels (comma-separated):</label><br>
+        <input type="text" id="labels" placeholder="E.g., January, February, March"><br>
+
+        <label for="data">Enter Data (comma-separated):</label><br>
+        <input type="text" id="data" placeholder="E.g., 10, 20, 30"><br>
+
+        <label for="chartType">Choose Chart Type:</label><br>
+        <select id="chartType">
+            <option value="bar">Bar</option>
+            <option value="line">Line</option>
+            <option value="pie">Pie</option>
+            <option value="doughnut">Doughnut</option>
+        </select><br>
+
+        <button onclick="updateChart()">Update Chart</button>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script src="app.js"></script>
+
+</body>
+</html>

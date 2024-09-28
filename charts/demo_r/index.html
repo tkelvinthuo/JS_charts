@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ECharts with User Input</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <style>
+        /* Basic styles for form and chart */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Arrange title and charts vertically */
+            align-items: center; /* Center align the title and charts */
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Space between title and charts */
+        }
+
+        .charts-container {
+            display: flex; /* Arrange charts side by side */
+            justify-content: space-between; /* Space between charts */
+            width: 100%; /* Full width for charts */
+            max-width: 1200px; /* Maximum width for charts */
+        }
+
+        .chart-container {
+            display: flex;
+            flex-direction: column; /* Stack the form above the chart */
+            align-items: center; /* Center align the contents */
+            margin: 0 20px; /* Margin between charts */
+            width: 400px; /* Fixed width for each chart container */
+        }
+
+        .form-container {
+            margin-bottom: 10px; /* Space between form and chart */
+        }
+
+        .form-container input, .form-container button {
+            padding: 8px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .chart {
+            width: 200%; /* Fill available width */
+            height: 400px; /* Fixed height for charts */
+        }
+    </style>
+</head>
+<body>
+
+<h1>ECharts with User Input</h1>
+
+<!-- Container for both charts -->
+<div class="charts-container">
+
+    <!-- Container for the first chart and its form -->
+    <div class="chart-container">
+        <div class="form-container">
+            <h2>Chart 1: Update Sales</h2>
+            <label for="categories1">Enter Categories (comma-separated):</label><br>
+            <input type="text" id="categories1" placeholder="E.g., Shirts, Cardigans, Pants"><br>
+
+            <label for="data1">Enter Data (comma-separated):</label><br>
+            <input type="text" id="data1" placeholder="E.g., 5, 20, 15"><br>
+
+            <button onclick="updateChart1()">Update Chart 1</button>
+        </div>
+        <!-- Prepare DOM for the first chart -->
+        <div id="main" class="chart"></div>
+    </div>
+
+    <!-- Container for the second chart and its form -->
+    <div class="chart-container">
+        <div class="form-container">
+            <h2>Chart 2: Update Stock</h2>
+            <label for="categories2">Enter Categories (comma-separated):</label><br>
+            <input type="text" id="categories2" placeholder="E.g., A, B, C"><br>
+
+            <label for="data2">Enter Data (comma-separated):</label><br>
+            <input type="text" id="data2" placeholder="E.g., 15, 30, 25"><br>
+
+            <button onclick="updateChart2()">Update Chart 2</button>
+        </div>
+        <!-- Prepare DOM for the second chart -->
+        <div id="main2" class="chart"></div>
+    </div>
+
+</div>
+
+<!-- Include the JavaScript file -->
+<script src="script.js"></script>
+</body>
+</html>
